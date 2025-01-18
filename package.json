@@ -1,0 +1,51 @@
+{
+  "name": "renpy-ast",
+  "displayName": "Ren'Py Language (8.3+)",
+  "description": "Syntax parsing for the Ren'Py language",
+  "version": "0.0.1",
+  "license": "MIT",
+  "homepage": "https://github.com/SkyLetie/renpy-ast",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SkyLeite/renpy-ast"
+  },
+  "keywords": ["python", "renpy"],
+  "categories": ["Programming Languages", "Snippets"],
+  "engines": {
+    "node": "^23"
+  },
+  "main": "./dist/extension",
+  "browser": "./dist/extension.js",
+  "scripts": {
+    "lint": "eslint -c .eslintrc.json --ext .ts ./src/",
+    "format-check": "prettier --check 'src/**/*.ts' '.github/**/*.yml'",
+    "start": "tsc && node out",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.7",
+    "@types/node": "^20.14.10",
+    "@types/vscode": "1.75",
+    "@types/webpack": "^5.28.5",
+    "@typescript-eslint/eslint-plugin": "^7.15.0",
+    "@typescript-eslint/parser": "^7.15.0",
+    "@vscode/debugadapter": "^1.66.0",
+    "@vscode/vsce": "^2.29.0",
+    "copy-webpack-plugin": "^12.0.2",
+    "eslint": "^8.42.0",
+    "eslint-plugin-import": "^2.29.1",
+    "fork-ts-checker-webpack-plugin": "^9.0.2",
+    "node-polyfill-webpack-plugin": "^4.0.0",
+    "prettier": "^3.3.2",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3",
+    "vitest": "^3.0.2",
+    "vscode-test": "^1.6.1",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "vscode-languageserver-textdocument": "^1.0.12"
+  }
+}
