@@ -5,11 +5,9 @@ Library for parsing an abstract syntax tree from an `.rpy` file. Extracted from 
 ## Usage
 
 ``` typescript
-import parse from "renpy-ast";
-import { readFile } from "node:fs/promises";
+import { parseFile } from "@renpy/ast";
 
-const file = await readFile("screens.rpy");
-const tokens = parse(file);
+const { document, nodes } = await parseFile("screens.rpy");
 
-tokens.forEach(token => console.log(token));
+nodes.forEach(node => console.log(node));
 ```
