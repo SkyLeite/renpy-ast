@@ -1,7 +1,7 @@
 {
   "name": "@renpy/ast",
   "description": "Syntax parsing for the Ren'Py language",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "license": "MIT",
   "homepage": "https://github.com/SkyLeite/renpy-ast",
   "author": "Sky Leite <sky@leite.dev> (https://leite.dev)",
