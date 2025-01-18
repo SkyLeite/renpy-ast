@@ -1,7 +1,7 @@
 /* eslint-disable no-shadow */
 // This index is used to make it easier to detect what type of token is currently used.
 // This also makes sure that token types wont have overlapping ID's.
-export const enum TokenTypeIndex {
+export enum TokenTypeIndex {
     Error = 0,
     KeywordStart = 1,
     EntityStart = 1001,
@@ -15,7 +15,7 @@ export const enum TokenTypeIndex {
     InvalidTokenID = 9999,
 }
 
-export const enum KeywordTokenType {
+export enum KeywordTokenType {
     // Python statement keywords
     Init = TokenTypeIndex.KeywordStart,
     Offset,
@@ -122,7 +122,7 @@ export const enum KeywordTokenType {
     Nonlocal,
 }
 
-export const enum EntityTokenType {
+export enum EntityTokenType {
     ClassName = TokenTypeIndex.EntityStart,
     InheritedClassName,
     TypeName,
@@ -143,7 +143,7 @@ export const enum EntityTokenType {
     PropertyName,
 }
 
-export const enum LiteralTokenType {
+export enum LiteralTokenType {
     String = TokenTypeIndex.ConstantStart,
     UnquotedString,
 
@@ -155,7 +155,7 @@ export const enum LiteralTokenType {
     Boolean,
 }
 
-export const enum OperatorTokenType {
+export enum OperatorTokenType {
     // Arithmetic operators
     Plus = TokenTypeIndex.OperatorsStart, // +
     Minus, // -
@@ -220,7 +220,7 @@ export const enum OperatorTokenType {
     ConditionalNegative, // ?!
 }
 
-export const enum CharacterTokenType {
+export enum CharacterTokenType {
     Unknown = TokenTypeIndex.UnknownCharacterID,
     // Expression characters
     OpenParentheses = TokenTypeIndex.CharactersStart, // (
@@ -256,7 +256,7 @@ export const enum CharacterTokenType {
 }
 
 // Only valid inside strings
-export const enum EscapedCharacterTokenType {
+export enum EscapedCharacterTokenType {
     EscWhitespace = TokenTypeIndex.EscapedCharacterStart,
     EscNewline, // \n
 
@@ -267,7 +267,7 @@ export const enum EscapedCharacterTokenType {
     EscOpenBracket, // {{
 }
 
-export const enum MetaTokenType {
+export enum MetaTokenType {
     Invalid = TokenTypeIndex.InvalidTokenID,
     Deprecated = TokenTypeIndex.DeprecatedTokenID,
 
@@ -435,3 +435,13 @@ export const enum MetaTokenType {
 
 export type TypeOfTokenType = typeof KeywordTokenType & typeof EntityTokenType & typeof MetaTokenType & typeof LiteralTokenType & typeof OperatorTokenType & typeof CharacterTokenType & typeof EscapedCharacterTokenType;
 export type TokenType = KeywordTokenType | EntityTokenType | MetaTokenType | LiteralTokenType | OperatorTokenType | CharacterTokenType | EscapedCharacterTokenType;
+
+export const AllTokens = {
+    ...KeywordTokenType,
+    ...EntityTokenType,
+    ...MetaTokenType,
+    ...LiteralTokenType,
+    ...OperatorTokenType,
+    ...CharacterTokenType,
+    ...EscapedCharacterTokenType,
+};

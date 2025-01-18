@@ -1,7 +1,7 @@
 import { Tokenizer } from "./tokenizer/tokenizer";
 import { TextDocument } from "vscode-languageserver-textdocument";
 
-export default function tokenize(content: string) {
+export default async function tokenize(content: string) {
     const document = TextDocument.create("file://my.rpy", "rpy", 0, content);
-    return Tokenizer.tokenizeDocument(document);
+    return { document, nodes: await Tokenizer.tokenizeDocument(document) };
 }

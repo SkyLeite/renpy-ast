@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { Position, TextDocument, Range as VSRange } from "vscode-languageserver-textdocument";
-import { CharacterTokenType, EntityTokenType, EscapedCharacterTokenType, KeywordTokenType, LiteralTokenType, MetaTokenType, OperatorTokenType, TokenType, TokenTypeIndex, TypeOfTokenType } from "./renpy-tokens";
+import { AllTokens, CharacterTokenType, EntityTokenType, EscapedCharacterTokenType, KeywordTokenType, LiteralTokenType, MetaTokenType, OperatorTokenType, TokenType, TokenTypeIndex, TypeOfTokenType } from "./renpy-tokens";
 import { TokenPattern, TokenRangePattern, TokenMatchPattern, TokenRepoPattern } from "./token-pattern-types";
 import { Vector } from "../utilities/vector";
 import { LogLevel, logMessage } from "../logger";
@@ -85,6 +85,10 @@ export class Token {
         this.startPos = startPos;
         this.endPos = endPos;
         this.metaTokens = new Vector<TokenType>();
+    }
+
+    public getType() {
+        return AllTokens[this.type];
     }
 
     public getVSCodeRange() {

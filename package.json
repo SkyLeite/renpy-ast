@@ -1,26 +1,32 @@
 {
-  "name": "renpy-ast",
-  "displayName": "Ren'Py Language (8.3+)",
+  "name": "@renpy/ast",
   "description": "Syntax parsing for the Ren'Py language",
   "version": "0.0.1",
   "license": "MIT",
-  "homepage": "https://github.com/SkyLetie/renpy-ast",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/SkyLeite/renpy-ast"
+  "homepage": "https://github.com/SkyLeite/renpy-ast",
+  "author": "Sky Leite <sky@leite.dev> (https://leite.dev)",
+  "repository": "github:SkyLeite/renpy-ast",
+  "bugs": {
+    "url": "https://github.com/SkyLeite/renpy-ast/issues",
+    "email": "sky@leite"
   },
-  "keywords": ["python", "renpy"],
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/renpytom"
+  },
+  "keywords": ["python", "renpy", "ast"],
   "categories": ["Programming Languages", "Snippets"],
   "engines": {
     "node": "^23"
   },
-  "main": "./dist/extension",
-  "browser": "./dist/extension.js",
+  "main": "./out/index.js",
+  "types": "./out/index.d.ts",
   "scripts": {
     "lint": "eslint -c .eslintrc.json --ext .ts ./src/",
     "format-check": "prettier --check 'src/**/*.ts' '.github/**/*.yml'",
     "start": "tsc && node out",
-    "test": "vitest"
+    "test": "vitest",
+    "prepare": "tsc"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.7",
